@@ -27,16 +27,26 @@ The app includes:
 1. **Room Navigator**
    - Visual room cards with distinct tones/colors
    - Terms, definitions, and weak-vs-strong phrasing
-2. **Vocabulary Translator**
+2. **Flashcards (31 terms)**
+   - Flip interaction (click or Space), keyboard navigation (← →), optional shuffle
+   - Back of card links to **Wikipedia** (article when known, otherwise Wikipedia search) plus **web search** for deeper reading
+3. **Vocabulary Translator**
    - User enters casual language
    - App rewrites into Build, Strategy, Boardroom, and Growth language (rules engine, no API required)
-3. **Scenario Practice Mode**
+4. **Scenario Practice Mode**
    - Real PM prompts
    - Room-level classification of user answer
    - Suggested wording upgrade
-4. **Progress Tracker**
-   - Tracks terms explored + scenarios completed
+5. **Progress Tracker**
+   - Tracks terms explored (rooms + flashcards) and scenarios completed
    - Persists in `localStorage`
+
+## UX approach (short)
+
+- **Sticky primary navigation** so Rooms, Flashcards, Translator, Scenarios, and Share are one tap away instead of one long scroll.
+- **Skip link** to main content for keyboard and screen-reader users.
+- **Labeled inputs** and **focus states** on fields and controls.
+- **Flashcards** use a clear front (term + room) vs back (definition, weak/strong, external links) so study mode matches how people actually memorize.
 
 ## Tech stack
 
@@ -54,6 +64,8 @@ The app includes:
 ├── src
 │   ├── App.jsx
 │   ├── data.js
+│   ├── Flashcards.jsx
+│   ├── learnUrls.js
 │   ├── index.css
 │   └── main.jsx
 ├── tailwind.config.cjs
